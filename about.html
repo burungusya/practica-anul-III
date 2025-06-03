@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despre Noi - Bijuterii Elegante</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .about-section {
+            padding: 6rem 5% 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .values-section {
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-card i {
+            font-size: 2.5rem;
+            color: #c0392b;
+            margin-bottom: 1rem;
+        }
+
+        .value-card h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Bijuterii Elegante</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="index.html#products">Produse</a></li>
+                <li><a href="about.html">Despre Noi</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#wishlist" class="wishlist-icon">
+                    <i class="fas fa-heart"></i>
+                    <span class="wishlist-count">0</span>
+                </a>
+                <a href="#cart" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <div class="about-header">
+                <h1>Despre Bijuterii Elegante</h1>
+                <p>Povestea noastră de pasiune și excelență</p>
+            </div>
+
+            <div class="about-content">
+                <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Magazinul nostru" class="about-image">
+                <div class="about-text">
+                    <p>La Bijuterii Elegante, transformăm pasiunea pentru bijuterii în opere de artă care îmbunătățesc viața clienților noștri. Cu o experiență de peste 15 ani în industrie, ne-am dedicat creării de bijuterii excepționale care combină tradiția cu inovația.</p>
+                    <p>Fiecare piesă din colecția noastră este creată cu atenție la detalii și cu respect pentru tradițiile meșteșugului de bijutier. Lucrăm doar cu materiale de cea mai înaltă calitate și cu pietre prețioase autentice, garantând astfel durabilitatea și frumusețea fiecărei bijuterii.</p>
+                    <p>Echipa noastră de bijutieri experimentați combină tehnici tradiționale cu tehnologii moderne pentru a crea bijuterii care să depășească așteptările clienților noștri.</p>
+                </div>
+            </div>
+
+            <div class="values-section">
+                <h2>Valorile Noastre</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <i class="fas fa-gem"></i>
+                        <h3>Calitate</h3>
+                        <p>Ne angajăm să oferim doar bijuterii de cea mai înaltă calitate, realizate din materiale premium.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Pasiune</h3>
+                        <p>Fiecare piesă este creată cu pasiune și dedicare, transformând fiecare bijuterie într-o operă de artă.</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Încredere</h3>
+                        <p>Construim relații de încredere cu clienții noștri prin transparență și servicii excepționale.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: contact@bijuteriielegante.md</p>
+                <p>Telefon: +373 123 456 78</p>
+            </div>
+            <div class="footer-section">
+                <h3>Urmărește-ne</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Bijuterii Elegante. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

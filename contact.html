@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Bijuterii Elegante</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .contact-section {
+            padding: 6rem 5% 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .contact-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .contact-info h2 {
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: #c0392b;
+            margin-right: 1rem;
+            width: 30px;
+        }
+
+        .contact-form {
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: #c0392b;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #a93226;
+        }
+
+        .map-section {
+            margin-top: 4rem;
+        }
+
+        .map-container {
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Bijuterii Elegante</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="index.html#products">Produse</a></li>
+                <li><a href="about.html">Despre Noi</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#wishlist" class="wishlist-icon">
+                    <i class="fas fa-heart"></i>
+                    <span class="wishlist-count">0</span>
+                </a>
+                <a href="#cart" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <div class="contact-header">
+                <h1>Contactează-ne</h1>
+                <p>Suntem aici să răspundem la întrebările tale</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Informații Contact</h2>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Adresa</h3>
+                            <p>Strada Exemplu, Nr. 123<br>Chișinău, Republica Moldova</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Telefon</h3>
+                            <p>+373 123 456 78</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>contact@bijuteriielegante.md</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Program</h3>
+                            <p>Luni - Vineri: 10:00 - 20:00<br>Sâmbătă: 10:00 - 18:00<br>Duminică: Închis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2>Trimite-ne un mesaj</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nume</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subiect</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mesaj</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Trimite Mesajul</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-section">
+                <h2>Locația Noastră</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d21757.123456789!2d28.8275!3d47.0228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97c3628b769a1%3A0x37d1a4c651f84b0!2sChi%C8%99in%C4%83u%2C%20Moldova!5e0!3m2!1sro!2s!4v1647881234567!5m2!1sro!2s" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: contact@bijuteriielegante.ro</p>
+                <p>Telefon: +40 123 456 789</p>
+            </div>
+            <div class="footer-section">
+                <h3>Urmărește-ne</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Bijuterii Elegante. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically handle the form submission
+            alert('Mulțumim pentru mesaj! Vă vom contacta în curând.');
+            this.reset();
+        });
+    </script>
+</body>
+</html> 

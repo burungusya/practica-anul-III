@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Bijuterii Elegante</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .admin-section {
+            padding: 6rem 5% 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .admin-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .admin-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .admin-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .image-preview {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .image-preview img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .submit-btn {
+            background-color: #c0392b;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #a93226;
+        }
+
+        .product-list {
+            margin-top: 4rem;
+        }
+
+        .product-list h2 {
+            margin-bottom: 2rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1rem;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .edit-btn, .delete-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .edit-btn {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .delete-btn {
+            background-color: #e74c3c;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Bijuterii Elegante</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="index.html#products">Produse</a></li>
+                <li><a href="about.html">Despre Noi</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="admin-section">
+            <div class="admin-header">
+                <h1>Administrare Produse</h1>
+                <p>Adaugă sau editează produse în magazin</p>
+            </div>
+
+            <div class="admin-form">
+                <form id="productForm">
+                    <div class="form-group">
+                        <label for="productName">Nume Produs</label>
+                        <input type="text" id="productName" name="productName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice">Preț (MDL)</label>
+                        <input type="text" id="productPrice" name="productPrice" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productDescription">Descriere</label>
+                        <textarea id="productDescription" name="productDescription" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="productImages">URL-uri Imagini (separate prin virgulă)</label>
+                        <textarea id="productImages" name="productImages" required></textarea>
+                        <div class="image-preview" id="imagePreview"></div>
+                    </div>
+                    <button type="submit" class="submit-btn">Adaugă Produs</button>
+                </form>
+            </div>
+
+            <div class="product-list">
+                <h2>Produse Existente</h2>
+                <div class="product-grid" id="productGrid">
+                    <!-- Products will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: contact@bijuteriielegante.md</p>
+                <p>Telefon: +373 123 456 78</p>
+            </div>
+            <div class="footer-section">
+                <h3>Urmărește-ne</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Bijuterii Elegante. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Preview images as they are added
+        document.getElementById('productImages').addEventListener('input', function(e) {
+            const urls = e.target.value.split(',').map(url => url.trim());
+            const preview = document.getElementById('imagePreview');
+            preview.innerHTML = urls.map(url => `
+                <img src="${url}" alt="Preview" onerror="this.src='https://via.placeholder.com/150'">
+            `).join('');
+        });
+
+        // Handle form submission
+        document.getElementById('productForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const newProduct = {
+                id: products.length + 1,
+                name: document.getElementById('productName').value,
+                price: document.getElementById('productPrice').value + ' MDL',
+                description: document.getElementById('productDescription').value,
+                images: document.getElementById('productImages').value.split(',').map(url => url.trim())
+            };
+
+            products.push(newProduct);
+            renderProducts();
+            renderAdminProducts();
+            this.reset();
+            document.getElementById('imagePreview').innerHTML = '';
+            showNotification('Produs adăugat cu succes!');
+        });
+
+        // Render existing products in admin page
+        function renderAdminProducts() {
+            const productGrid = document.getElementById('productGrid');
+            if (!productGrid) return;
+
+            productGrid.innerHTML = products.map(product => `
+                <div class="product-card">
+                    <img src="${product.images[0]}" alt="${product.name}">
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <p>${product.price}</p>
+                        <div class="product-actions">
+                            <button class="edit-btn" onclick="editProduct(${product.id})">
+                                <i class="fas fa-edit"></i> Editează
+                            </button>
+                            <button class="delete-btn" onclick="deleteProduct(${product.id})">
+                                <i class="fas fa-trash"></i> Șterge
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Edit product
+        function editProduct(id) {
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            document.getElementById('productName').value = product.name;
+            document.getElementById('productPrice').value = product.price.replace(' MDL', '');
+            document.getElementById('productDescription').value = product.description;
+            document.getElementById('productImages').value = product.images.join(', ');
+            
+            // Show image preview
+            const preview = document.getElementById('imagePreview');
+            preview.innerHTML = product.images.map(url => `
+                <img src="${url}" alt="Preview" onerror="this.src='https://via.placeholder.com/150'">
+            `).join('');
+
+            // Scroll to form
+            document.querySelector('.admin-form').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Delete product
+        function deleteProduct(id) {
+            if (confirm('Sigur doriți să ștergeți acest produs?')) {
+                const index = products.findIndex(p => p.id === id);
+                if (index !== -1) {
+                    products.splice(index, 1);
+                    renderProducts();
+                    renderAdminProducts();
+                    showNotification('Produs șters cu succes!');
+                }
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderAdminProducts();
+        });
+    </script>
+</body>
+</html> 
